@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, ImageBackground, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TextInput, ImageBackground, Image, TouchableOpacity} from 'react-native';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import BackgroundImage from '../assets/Background-Image.png'
 import Icon from '../assets/profileicon.png'
@@ -38,10 +38,13 @@ export default class Screen1 extends React.Component {
             <View style={styles.inputContainer}>
               <Image source={Icon} style={styles.icon}/>
               <TextInput
-              style={styles.input}
-              onChangeText={(text) => this.setState({name: text})}
-              value={this.state.name}
-              placeholder='Enter your Name'
+                accessible={true}
+                accessibilityLabel="Enter your Name"
+                accessibilityHint="Enter the name you want to display while in chat"
+                style={styles.input}
+                onChangeText={(text) => this.setState({name: text})}
+                value={this.state.name}
+                placeholder='Enter your Name'
               />
             </View>
             
@@ -50,13 +53,45 @@ export default class Screen1 extends React.Component {
             </View>
 
             <View style={styles.colorContainer}>
-              <TouchableOpacity style={styles.color1} onPress={() => this.changeBackgroundColor(this.colors.dark)} />
-              <TouchableOpacity style={styles.color2} onPress={() => this.changeBackgroundColor(this.colors.purple)} />
-              <TouchableOpacity style={styles.color3} onPress={() => this.changeBackgroundColor(this.colors.blue)}/>
-              <TouchableOpacity style={styles.color4} onPress={() => this.changeBackgroundColor(this.colors.green)}/>
+              <TouchableOpacity 
+                accessible={true}
+                accessibilityLabel="black background"
+                accessibilityHint="changes background color to black on the chat screen"
+                accessibilityRole="button"  
+                style={styles.color1} 
+                onPress={() => this.changeBackgroundColor(this.colors.dark)} 
+              />
+              <TouchableOpacity
+                accessible={true}
+                accessibilityLabel="purple background"
+                accessibilityHint="changes background color to purple on the chat screen"
+                accessibilityRole="button"
+                style={styles.color2} 
+                onPress={() => this.changeBackgroundColor(this.colors.purple)} 
+              />
+              <TouchableOpacity 
+                accessible={true}
+                accessibilityLabel="blue background"
+                accessibilityHint="changes background color to blue on the chat screen"
+                accessibilityRole="button"
+                style={styles.color3} 
+                onPress={() => this.changeBackgroundColor(this.colors.blue)}
+              />
+              <TouchableOpacity
+                accessible={true}
+                accessibilityLabel="green background"
+                accessibilityHint="changes background color to green on the chat screen"
+                accessibilityRole="button"
+                style={styles.color4} 
+                onPress={() => this.changeBackgroundColor(this.colors.green)}
+              />
             </View>
 
               <Pressable
+                accessible={true}
+                accessibilityLabel="Start Chatting"
+                accessibilityHint="navigate to chat screen and start chatting"
+                accessibilityRole="button"
                 title="Go to Chat"
                 onPress={() => this.props.navigation.navigate('Chat', { name: this.state.name, backgroundColor: this.state.backgroundColor })}
                 style={styles.button}
