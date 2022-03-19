@@ -4,5 +4,5 @@
  
  Installation: Fork or download this repository. Next, run 'npm install' in your terminal to install dependencies.
  
- How to use: After installing this repository, install Expo globally if you haven't already. Then start the app by entering 'expo start' in the terminal. Next open the    app in an emulator or download the expo go app on your smart phone. 
+ How to use: After installing this repository, install Expo globally by entering 'npm install --global expo-cli' in the terminal. Then start the app by entering 'expo start' in the terminal. Next open the app in an emulator or download the expo go app on your smart phone. 
  
